@@ -24,7 +24,7 @@ build:
 
 integrations:
   hub:
-    - integrationName: shipDH
+    - integrationName: avinci-dh
       type: docker
 
   notificaton:
