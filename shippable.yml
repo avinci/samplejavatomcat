@@ -4,12 +4,6 @@ jdk:
   - oraclejdk8
 
 build:
-  pre_ci_boot:
-    image_name: drydock/u14
-    image_tag: tip
-    pull: false
-    options: '--privileged=true --net=bridge'
-
   ci:
     - sudo wget http://mirrors.ibiblio.org/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
     - sudo tar xzf apache-maven-3.3.9-bin.tar.gz -C /usr/local && rm -f apache-maven-3.3.9-bin.tar.gz
@@ -32,9 +26,6 @@ integrations:
       type: webhook
       payload:
         - versionName=$BRANCH.$BUILD_NUMBER
-      branches:
-        only:
-          - docker
       on_success: always
       on_failure: never
       on_start: never
