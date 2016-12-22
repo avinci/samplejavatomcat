@@ -19,6 +19,8 @@ dockerBuild() {
   echo "Starting Docker build for" $IMAGE_NAME:$IMAGE_TAG
   cd ./IN/$RES_REPO/gitRepo
   wget http://138.197.80.53:8080/docs/appdev/sample/sample.war
+  pwd
+  ls -al
   sudo docker build -t=$IMAGE_NAME:$IMAGE_TAG .
   echo "Completed Docker build for" $IMAGE_NAME:$IMAGE_TAG
 }
