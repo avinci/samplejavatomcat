@@ -19,16 +19,22 @@ build:
     - mkdir -p shippable/testresults && mkdir -p shippable/codecoverage
     - /usr/local/apache-maven-3.3.9/bin/mvn -q -B clean cobertura:cobertura install
     - ls -al $SHIPPABLE_BUILD_DIR/target
-    - jfrog rt u $SHIPPABLE_BUILD_DIR/sample.war builds/sample.war
+    - docker build -t avinci/sample:$BRANCH.$BUILD_NUMBER .
+    - docker push ttrahan/sample:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
-    - integrationName: avinci-jf
-      type: artifactory
+    - integrationName: avinci-dh
+      type: docker
 
-  notifications:
-    - integrationName: demo-jar-trg
+    - integrationName: trg-doc-img
       type: webhook
       payload:
-        - versionName=$BUILD_NUMBER
+        - versionName=$BRANCH.$BUILD_NUMBER
+      branches:
+        only:
+          - docker
       on_success: always
+      on_failure: never
+      on_start: never
+
