@@ -20,7 +20,7 @@ build:
     - /usr/local/apache-maven-3.3.9/bin/mvn -q -B clean cobertura:cobertura install
     - ls -al $SHIPPABLE_BUILD_DIR/target
     - docker build -t avinci/sample:$BRANCH.$BUILD_NUMBER .
-    - docker push ttrahan/sample:$BRANCH.$BUILD_NUMBER
+    - docker push avinci/sample:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
