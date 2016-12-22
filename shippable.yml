@@ -27,7 +27,7 @@ integrations:
     - integrationName: avinci-dh
       type: docker
 
-  notificaton:
+  notificatons:
     - integrationName: trg-doc-img
       type: webhook
       payload:
