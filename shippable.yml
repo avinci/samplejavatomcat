@@ -24,8 +24,8 @@ build:
 
 integrations:
   hub:
-    - integrationName: avinci-dh
-      type: docker
+    - integrationName: shipDH
+      type: hub
 
     - integrationName: trg-doc-img
       type: webhook
@@ -37,4 +37,3 @@ integrations:
       on_success: always
       on_failure: never
       on_start: never
-
