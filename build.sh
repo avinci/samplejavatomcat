@@ -58,9 +58,9 @@ test_env_info() {
   echo "########### JF_PASSWORD: ${#JF_PASSWORD}"
   echo "########### JF_URL: $JF_URL"
 
-#  echo "logging into Docker"
-#  docker login -u $DH_USERNAME -p $DH_PASSWORD -e $DH_EMAIL
-#  echo "Completed Docker login"
+  echo "logging into Docker"
+  docker login -u $DH_USERNAME -p $DH_PASSWORD -e $DH_EMAIL
+  echo "Completed Docker login"
 
   echo "logging into JFROG"
   jfrog rt c --url=$JF_URL --user=$JF_USERNAME --password=$JF_PASSWORD
