@@ -24,6 +24,7 @@ test_env_info() {
 
   echo "Testing build ENV"
 
+  echo "########### JOB_NAME: $JOB_NAME"
   echo "########### CURR_JOB_PATH: $CURR_JOB_PATH"
 
   echo "########### REPO_RES: $REPO_RES"
