@@ -46,6 +46,11 @@ test_env_info() {
   sudo add-apt-repository ppa:webupd8team/y-ppa-manager
   sudo apt-get update
   sudo apt-get install y-ppa-manager
+
+  sudo apt-get install -y python-software-properties
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+
   sudo apt-get install -yy oracle-java8-installer
   echo "########### JAVA_HOME: $JAVA_HOME"
   which java
