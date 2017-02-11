@@ -41,6 +41,9 @@ test_env_info() {
   echo "########### DOC_IMG_SOURCENAME: $DOC_IMG_SOURCENAME"
   echo "########### IMAGE_TAG: $IMAGE_TAG"
 
+  sudo apt-get install -yy openjdk-8-jdk
+  echo "########### JAVA_HOME: $JAVA_HOME"
+  
   sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
   sudo tar xzf apache-maven-3.3.9-bin.tar.gz -C /usr/local && rm -f apache-maven-3.3.9-bin.tar.gz
   ln -fs /usr/local/apache-maven-$3.3.9/bin/mvn /usr/bin
