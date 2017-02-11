@@ -54,7 +54,7 @@ test_env_info() {
 }
 
 build_push() {
-  popd $REPO_RES_STATE
+  pushd $REPO_RES_STATE
 
   echo "Building WAR file"
   mkdir -p shippable/testresults && mkdir -p shippable/codecoverage
