@@ -72,15 +72,15 @@ build_push() {
 
 create_state() {
   echo "Creating a state file for" $DOC_IMG_RES
-  echo versionName=$IMAGE_TAG > /build/state/$DOC_IMG_RES.env
-  cat /build/state/$DOC_IMG_RES.env
+  echo versionName=$IMAGE_TAG > "$JOB_STATE/$DOC_IMG_RES.env"
+  cat "$JOB_STATE/$DOC_IMG_RES.env"
   echo "Completed creating a state file for" $DOC_IMG_RES
 }
 
 main() {
   test_env_info
-#  build_push
-#  create_state
+  build_push
+  create_state
 }
 
 main
