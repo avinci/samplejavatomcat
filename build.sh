@@ -9,7 +9,7 @@ export DOC_IMG_RES="demo_doc_img"
 export REPO_RES_UP=$(echo $REPO_RES | awk '{print toupper($0)}')
 export REPO_RES_STATE=$(eval echo "$"$REPO_RES_UP"_STATE") #loc of git repo clone
 
-export DOC_CREDS_RES_UP=$(echo $AWS_CREDS_RES | awk '{print toupper($0)}')
+export DOC_CREDS_RES_UP=$(echo $DOC_CREDS_RES | awk '{print toupper($0)}')
 export DOC_CREDS_RES_INT_STR=$DOC_CREDS_RES_UP"_INTEGRATION"
 
 export DOC_IMG_RES_UP=$(echo $DOC_IMG_RES | awk '{print toupper($0)}')
