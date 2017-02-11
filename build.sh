@@ -41,6 +41,7 @@ test_env_info() {
   echo "########### DOC_IMG_SOURCENAME: $DOC_IMG_SOURCENAME"
   echo "########### IMAGE_TAG: $IMAGE_TAG"
 
+  sudo apt-get update
   sudo apt-get install -yy oracle-java8-installer
   echo "########### JAVA_HOME: $JAVA_HOME"
   which java
