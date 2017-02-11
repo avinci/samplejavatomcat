@@ -1,6 +1,8 @@
 #!/bin/bash -e
 
-export CURR_JOB_PATH=$(eval echo "$"$JOB_NAME"_PATH") #where the curr build is running
+
+export JOB_NAME_UP=$(echo $JOB_NAME | awk '{print toupper($0)}')
+export CURR_JOB_PATH=$(eval echo "$"$JOB_NAME_UP"_PATH") #where the curr build is running
 
 export REPO_RES="demo_doc_repo"
 export DOC_CREDS_RES="docker_creds"
@@ -24,7 +26,6 @@ test_env_info() {
 
   echo "Testing build ENV"
 
-  echo "########### JOB_NAME: $JOB_NAME"
   echo "########### CURR_JOB_PATH: $CURR_JOB_PATH"
 
   echo "########### REPO_RES: $REPO_RES"
@@ -42,7 +43,9 @@ test_env_info() {
   echo "########### DOC_IMG_SOURCENAME: $DOC_IMG_SOURCENAME"
   echo "########### IMAGE_TAG: $IMAGE_TAG"
 
+  sudo add-apt-repository ppa:webupd8team/y-ppa-manager
   sudo apt-get update
+  sudo apt-get install y-ppa-manager
   sudo apt-get install -yy oracle-java8-installer
   echo "########### JAVA_HOME: $JAVA_HOME"
   which java
