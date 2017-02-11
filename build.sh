@@ -43,6 +43,7 @@ test_env_info() {
   echo "########### DOC_IMG_SOURCENAME: $DOC_IMG_SOURCENAME"
   echo "########### IMAGE_TAG: $IMAGE_TAG"
 
+  sudo dpkg --configure -a
   sudo add-apt-repository ppa:webupd8team/y-ppa-manager
   sudo apt-get update
   sudo apt-get install y-ppa-manager
@@ -57,7 +58,7 @@ test_env_info() {
   apt-get update
   apt-get install -y icedtea-8-plugin
   update-alternatives --set javaws /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/javaws
-  
+
   echo "########### JAVA_HOME: $JAVA_HOME"
   which java
 
