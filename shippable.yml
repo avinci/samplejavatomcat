@@ -6,18 +6,18 @@ jdk:
 build:
   ci:
      - ls -al
-#    - sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-#    - sudo tar xzf apache-maven-3.3.9-bin.tar.gz -C /usr/local && rm -f apache-maven-3.3.9-bin.tar.gz
-#    - ln -fs /usr/local/apache-maven-$3.3.9/bin/mvn /usr/bin
-#    - echo "export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin" >> $HOME/.bashrc
-#    - mkdir -p shippable/testresults && mkdir -p shippable/codecoverage
-#    - /usr/local/apache-maven-3.3.9/bin/mvn -q -B clean cobertura:cobertura install
-#    - ls -al $SHIPPABLE_BUILD_DIR/target
-#    - jfrog rt u $SHIPPABLE_BUILD_DIR/target/HelloWorld.war builds/HelloWorld.war
-#    - ls $SHIPPABLE_BUILD_DIR/target
+    - sudo wget http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+    - sudo tar xzf apache-maven-3.3.9-bin.tar.gz -C /usr/local && rm -f apache-maven-3.3.9-bin.tar.gz
+    - ln -fs /usr/local/apache-maven-$3.3.9/bin/mvn /usr/bin
+    - echo "export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin" >> $HOME/.bashrc
+    - mkdir -p shippable/testresults && mkdir -p shippable/codecoverage
+    - /usr/local/apache-maven-3.3.9/bin/mvn -q -B clean cobertura:cobertura install
+    - ls -al $SHIPPABLE_BUILD_DIR/target
+    - jfrog rt u $SHIPPABLE_BUILD_DIR/target/HelloWorld.war dev/HelloWorld.war
+    - ls $SHIPPABLE_BUILD_DIR/target
 
 
-#integrations:
-#  hub:
-#    - integrationName: demo-jf
-#      type: artifactory
+integrations:
+  hub:
+    - integrationName: maven_repo
+      type: artifactory
